@@ -11,12 +11,15 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
+      ensure_installed = {
+        "lua_ls",
+        "rust_analyzer",
+        "intelephense",
+        "ast_grep",
+        "ts_ls",
+        "clangd",
+      }
     },
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "rust_analyzer", "intelephense", "ast_grep", "ts_ls" },
-      })
-    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -27,6 +30,18 @@ return {
         capabilities = capabilities,
       })
       lsconfig.ts_ls.setup({
+        capabilities = capabilities,
+      })
+      lsconfig.clangd.setup({
+        capabilities = capabilities,
+      })
+      lsconfig.ast_grep.setup({
+        capabilities = capabilities,
+      })
+      lsconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+      })
+      lsconfig.intelephense.setup({
         capabilities = capabilities,
       })
 

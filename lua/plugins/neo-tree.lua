@@ -15,7 +15,7 @@ return {
     -- fill any relevant options here
   },
   config = function()
-    vim.keymap.set('n', '<C-b>r', ':Neotree filesystem reveal right<CR>', {})
-    vim.keymap.set('n', '<C-b>l', ':Neotree filesystem reveal left<CR>', {})
+    vim.keymap.set('n', '<C-n>r', ':Neotree filesystem reveal right<CR>', {})
+    vim.keymap.set('n', '<C-n>l', ':Neotree filesystem reveal left<CR>', {})
   end
 }
